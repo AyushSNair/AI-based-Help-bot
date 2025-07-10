@@ -8,7 +8,7 @@ from query_data import get_rag_response  # You'd need to refactor your logic int
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For dev only; restrict in prod!
+    allow_origins=["https://ai-based-help-bot-full.onrender.com"],  # Only allow your deployed frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -19,5 +19,4 @@ class QueryRequest(BaseModel):
 
 @app.post("/query")
 def query_endpoint(request: QueryRequest):
-    answer, sources = get_rag_response(request.query)
-    return {"answer": answer, "sources": sources}
+    return get_rag_response(request.query)
