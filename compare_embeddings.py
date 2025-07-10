@@ -9,12 +9,12 @@ load_dotenv()
 #---- Set OpenAI API key 
 # Change environment variable name from "OPENAI_API_KEY" to the name given in 
 # your .env file.
-openai.api_key = os.environ['OPENAI_API_KEY']
+openai.api_key = os.environ['GOOGLE_API_KEY']
 
 def main():
     # Get embedding for a word.
     embedding_function = OpenAIEmbeddings()
-    vector = embedding_function.embed_query("apple")
+    vector = embedding_function.embed_query("MOSDAC")
     print(f"Vector for 'apple': {vector}")
     print(f"Vector length: {len(vector)}")
 

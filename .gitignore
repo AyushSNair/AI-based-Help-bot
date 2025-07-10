@@ -1,4 +1,24 @@
+# Python virtual environment
+myenv/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
 .env
-chroma_*
-chroma
+
+# macOS
 .DS_Store
+
+# Chroma DB files
+chroma_*
+chroma/
+
+# Node modules (if any)
+node_modules/
+
+# VSCode settings (optional)
+.vscode/
