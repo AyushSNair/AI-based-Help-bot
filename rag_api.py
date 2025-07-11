@@ -8,7 +8,11 @@ from query_data import get_rag_response  # You'd need to refactor your logic int
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://ai-based-help-bot-full.onrender.com"],  # Only allow your deployed frontend
+    allow_origins=[
+        "https://ai-based-help-bot-full.onrender.com",  # Your current frontend
+        "https://ai-based-help-bot.onrender.com",  
+        "http://localhost:3000",  # Local development
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
